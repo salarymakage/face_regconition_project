@@ -3,7 +3,6 @@ from django.shortcuts import render, redirect
 import cv2
 import sqlite3
 import logging
-# from django.shortcuts import render
 
 logger = logging.getLogger(__name__)
 
@@ -113,3 +112,6 @@ def student_list(request):
     students = cursor.fetchall()
     conn.close()
     return JsonResponse({'students': students, 'detected_student': detected_student})
+
+def main_page(request):
+    return render(request, 'detection/main.html')

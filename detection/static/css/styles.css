@@ -12,6 +12,8 @@ body {
     background: #f7f7f7;
     height: 100vh;
     position: relative;
+    background-color: #f7f7f7;
+    flex-direction: column; /* Added this line */
 }
 
 .container {
@@ -20,9 +22,10 @@ body {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    text-align: center;
 }
 
-button {
+button, .button-link {
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
@@ -30,11 +33,59 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
 }
-
-button:hover {
+button:hover, .button-link:hover {
     background-color: #45a049;
 }
+
+h1 {
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: black;
+  }
+   
+  
+  .button-link {
+    display: inline-block;
+    width: 200px; /* Increased width for better appearance */
+    height: 50px;
+    line-height: 50px;
+    background: white;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border-radius: 25px;
+    border: 2px solid rgb(132, 132, 132);
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .button-link::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .button-link:hover {
+    background-color: rgb(132, 132, 132);
+    color: white;
+  }
+  
+  .button-link:hover::after {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  
 
 .video-section {
     display: flex;

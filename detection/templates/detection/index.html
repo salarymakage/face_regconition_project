@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
+
     <div class="container">
         <div class="video-section">
             <h1>Video Feed</h1>
@@ -29,7 +30,12 @@
                 <!-- Detected student profile will be populated here -->
             </div>
         </div>
+        
+        <a class="button-link" href="{% url 'main_page' %}" >Go to Main Page</a>
     </div>
+
+    {% comment %} <a class="button-link" href="{% url 'index' %}">Go to Detection Page</a> {% endcomment %}
+
 
     <script>
         document.getElementById('startVideo').addEventListener('click', function() {
@@ -51,7 +57,7 @@
             document.getElementById('videoFeed').style.display = 'none';
         });
 
-        if (!document.getElementById('videoFeed').complete || docadd .ument.getElementById('videoFeed').naturalWidth === 0) {
+        if (!document.getElementById('videoFeed').complete || document.getElementById('videoFeed').naturalWidth === 0) {
             document.getElementById('loadingSpinner').style.display = 'flex';
             document.getElementById('videoFeed').style.display = 'none';
         }
